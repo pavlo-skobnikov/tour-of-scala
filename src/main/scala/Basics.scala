@@ -25,10 +25,11 @@ object Blocks:
     temporaryVariable.toString()
   }
 
-  val indentationBlock: String =
+  val indentationBlock: String = {
     val temporaryVariable = 5
 
     temporaryVariable.toString()
+  }
 
 /** Functions == expressions w/ >= 0 parameters.
   */
@@ -36,10 +37,11 @@ object Functions:
   val noArgsAnonymousFn = () => println("No number function called.")
   val singleArgAnonymousFn = (number: Int) =>
     println(s"Given number is $number")
-  val multipleArgAnonymousFn = (firstArg: String, secondArg: String) =>
+  val multipleArgAnonymousFn = (firstArg: String, secondArg: String) => {
     println(
       s"The first argument is {$firstArg}, and the second one is {$secondArg}"
     )
+  }
 
 /** Methods are functions defined with `def` with extra features.
   */
@@ -87,10 +89,11 @@ object Objects:
   object SingletonCounter:
     private var counter: Int = 0
 
-    def count() =
+    def count() = {
       counter += 1
 
       print(s"The counter value is $counter")
+    }
   end SingletonCounter
 
   /* Objects can't be instantiated */
@@ -107,9 +110,10 @@ object Traits:
     def sayAnything(): Unit
 
   class WhateverPrinter extends PhrasePrinter:
-    override def greet(subject: String): Unit =
+    override def greet(subject: String): Unit = {
       super.greet(subject)
       sayAnything()
+    }
 
     override def sayAnything(): Unit = print("Whatever, man 🙄")
 
